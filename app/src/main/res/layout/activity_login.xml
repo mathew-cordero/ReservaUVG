@@ -9,15 +9,15 @@
 
     <Button
         android:id="@+id/botonEjemplo"
-        style="?attr/materialButtonOutlinedStyle"
+
         android:layout_width="371dp"
         android:layout_height="67dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="INICIAR SESION"
-        android:textColor="@color/white"
         android:textSize="39sp"
-
+        android:textColor="@color/colorfondo"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
