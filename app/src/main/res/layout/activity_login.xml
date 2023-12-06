@@ -8,7 +8,7 @@
     tools:context=".Auth.Login">
 
     <Button
-        android:id="@+id/botonEjemplo"
+        android:id="@+id/botoninicio"
 
         android:layout_width="371dp"
         android:layout_height="67dp"
