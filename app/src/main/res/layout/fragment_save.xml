@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:text="MIS GUARDADOS"
-        android:textSize="40dp"/>
+        android:textSize="40dp"
+        android:background="@color/white"/>
 
 </FrameLayout>

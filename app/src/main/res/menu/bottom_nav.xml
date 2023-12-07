@@ -3,12 +3,15 @@
 
     <item android:title="Principal"
         android:id="@+id/home"
+        android:titleCondensed="Princ"
         android:icon="@drawable/baseline_home_24"/>
     <item android:title="Perfil"
         android:id="@+id/account"
+        android:iconTint="@color/white"
         android:icon="@drawable/baseline_account_circle_24"/>
     <item android:title="Guardados"
         android:id="@+id/save"
+        android:titleCondensed="Save"
         android:icon="@drawable/baseline_inventory_24"/>
 
 </menu>

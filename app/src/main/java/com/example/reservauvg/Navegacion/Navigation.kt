@@ -1,7 +1,10 @@
 package com.example.reservauvg.Navegacion
 
+import android.graphics.Color
+import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.reservauvg.R
 import com.example.reservauvg.databinding.ActivityMainBinding
@@ -9,10 +12,15 @@ import com.example.reservauvg.databinding.ActivityNavigationBinding
 
 class Navigation : AppCompatActivity() {
     private lateinit var binding: ActivityNavigationBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNavigationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var toolbar:Toolbar? = findViewById(R.id.toolbar)
+
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         //llamamos primero a home para presentarlo a el primero
         replace(Home())
         binding.bottomNavigationView.setOnItemSelectedListener {
@@ -36,3 +44,5 @@ class Navigation : AppCompatActivity() {
         fragmenttransaction.commit()
     }
 }
+
+
