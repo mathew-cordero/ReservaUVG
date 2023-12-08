@@ -15,10 +15,10 @@
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/bannerprueba"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/bannerprueba" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageViewprofile"
@@ -26,9 +26,9 @@
             android:layout_height="150dp"
             android:layout_marginTop="130dp"
             android:adjustViewBounds="true"
+            android:background="@drawable/round_background"
             android:scaleType="centerCrop"
             android:src="@drawable/userprueba"
-            android:background="@drawable/round_background"
             app:layout_constraintEnd_toEndOf="@+id/imageBanner"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="@+id/imageBanner"
@@ -36,13 +36,53 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="92dp"
-            android:layout_height="12dp"
-            android:layout_marginTop="52dp"
-            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="NOMBRE COMPLETO"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:textStyle="normal|bold"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewprofile" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="209dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:text="CERRAR SESION"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorfondo"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="263dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/white"
+            android:text="MI CANVA"
+            android:textColor="@color/colorfondo"
+            android:textSize="30dp"
+            app:cornerRadius="0dp"
+            app:icon="@drawable/baseline_home_24"
+            app:iconPadding="0dp"
+            app:iconSize="40dp"
+            app:iconTint="@color/colorfondo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
