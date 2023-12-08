@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import com.example.reservauvg.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,8 +37,14 @@ class Account : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_account, container, false)
+        val imageViewProfile: ImageView = view.findViewById(R.id.imageViewprofile)
+        imageViewProfile.setOnClickListener {
+            // Show the AlertDialog when the ImageView is clicked
+            showAlertDialog()
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false)
+        return view
     }
 
     companion object {
@@ -57,4 +66,29 @@ class Account : Fragment() {
                 }
             }
     }
+
+    private fun showAlertDialog() {
+        val alertDialogBuilder = AlertDialog.Builder(requireContext())
+        val inflater:LayoutInflater = getLayoutInflater()
+        val view:View = inflater.inflate(R.layout.dialog_alert,null)
+        alertDialogBuilder.setView(view)
+        val dialogo:AlertDialog = alertDialogBuilder.create()
+        dialogo.show()
+
+        val botonfoto:Button = view.findViewById(R.id.buttontomar)
+        botonfoto.setOnClickListener {
+            //aqui agregaremos el boton para tomar foto
+            //para mientras solo disminuiremos el dialogo
+            dialogo.dismiss()
+        }
+        val botonlibreria:Button = view.findViewById(R.id.buttonlibrary)
+        botonlibreria.setOnClickListener {
+            //aqui agregaremos el boton para sacar foto de la libreria.
+            //para mientras solo disminuiremos el dialogo
+            dialogo.dismiss()
+        }
+
+
+    }
+
 }
