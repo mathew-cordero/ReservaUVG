@@ -9,27 +9,38 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reservauvg.R
 
-class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>(){
+class Adapter(var mList: List<Salon>): RecyclerView.Adapter<Adapter.ViewHolder>(){
 
-    val titules = arrayOf("CIT 210","CIT 323", "CIT 525")
-    val disponible = arrayOf("SI","NO","NO")
-    val images = intArrayOf(R.drawable.imagen,R.drawable.imagen,R.drawable.imagen)
-    //colocamos el oncreate
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context).inflate(R.layout.aula_layout,viewGroup,false)
         return ViewHolder(v)
+
+        //aqui configuraremos los botones.
+
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        viewHolder.titulo.text = titules[i]
-        viewHolder.disponibilidad.text = "Disponible: "+disponible[i]
-        viewHolder.imagen.setImageResource(images[i])
+        viewHolder.titulo.text = mList[i].nombre
+        //vemos que disponibilidad tiene
+        var disponibilidad:String
+        if(mList[i].disponibilidad){
+            disponibilidad = "SI" //si esta disponible
+        }else{
+            disponibilidad = "NO" //si no esta diponible
+        }
+        viewHolder.disponibilidad.text = "Disponible: "+disponibilidad
+        viewHolder.imagen.setImageResource(mList[i].imagen)
     }
 
     override fun getItemCount(): Int {
-        return titules.size
+        return mList.size
     }
 
+    fun setFilteredList(mList: List<Salon>){
+        this.mList = mList
+        notifyDataSetChanged()
+    }
     //clase para construir el viewholder
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         var imagen:ImageView

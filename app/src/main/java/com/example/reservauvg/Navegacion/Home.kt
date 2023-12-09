@@ -7,10 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.SearchView
+import android.widget.Toast
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reservauvg.Aulas.Adapter
+import com.example.reservauvg.Aulas.Salon
 import com.example.reservauvg.R
+import java.util.Locale
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +31,9 @@ class Home : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private lateinit var searchView: SearchView
+    private var mList = ArrayList<Salon>()
+    private lateinit var adapter:Adapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -41,9 +48,27 @@ class Home : Fragment() {
     ): View? {
         val view:View =inflater.inflate(R.layout.fragment_home, container, false)
         val milistadeAulas = view.findViewById<RecyclerView>(R.id.listadeAulas)
-        val adapter = Adapter()
+        searchView = view.findViewById(R.id.searchView)
+
+        addDataToList()
+        adapter = Adapter(mList)
         milistadeAulas.layoutManager = LinearLayoutManager(context)
         milistadeAulas.adapter=adapter
+
+
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+
+
+        })
         return view
     }
 
@@ -65,5 +90,35 @@ class Home : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    //esta funcion modifica la lista
+    private fun addDataToList() {
+        mList.add(Salon("CIT 210", true,R.drawable.imagen))
+        mList.add(Salon("CIT 555", true,R.drawable.imagen))
+        mList.add(Salon("CIT 155", false,R.drawable.imagen))
+        mList.add(Salon("CIT 255", false,R.drawable.imagen))
+        mList.add(Salon("CIT 355", false,R.drawable.imagen))
+        mList.add(Salon("CIT 520", true,R.drawable.imagen))
+
+    }
+
+    private fun filterList(query: String?) {
+
+        if (query != null) {
+            val filteredList = ArrayList<Salon>()
+            for (i in mList) {
+                if (i.nombre.lowercase(Locale.ROOT).contains(query)) {
+                    filteredList.add(i)
+                }
+            }
+
+            if (filteredList.isEmpty()) {
+                Toast.makeText(context, "Podrias volver a", Toast.LENGTH_SHORT).show()
+            } else {
+                adapter.setFilteredList(filteredList)
+            }
+        }
     }
 }

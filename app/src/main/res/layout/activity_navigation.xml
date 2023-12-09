@@ -47,6 +47,7 @@
         android:background="@color/colorfondo"
         app:backgroundTint="@color/colorfondo"
         app:itemBackground="@color/colorfondo"
+        app:itemActiveIndicatorStyle="@style/BottonNavigation"
         app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
 

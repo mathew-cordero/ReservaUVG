@@ -3,17 +3,22 @@
     <style name="Base.Theme.ReservaUVG" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorfondo</item>
         <item name="colorPrimaryVariant">@color/colorfondo</item>
-        <item name = "colorOnPrimary">@color/white</item>
+        <!-- ON primary ayudara a que cuando presiones el boton se torne la animacion de un color. -->
+        <item name = "colorOnPrimary">@color/colorfondo</item>
 
-
+        <item name="android:statusBarColor">@color/colorfondo</item>
     </style>
 
     <style name="Theme.ReservaUVG" parent="Base.Theme.ReservaUVG" />
     
     <style name="BottonNavigation">
-        <item name="android:background">@color/colorfondo</item>
+
         <item name="itemIconTint">@color/white</item>
         <item name="itemTextColor">@color/white</item>
         <item name="android:itemBackground">@color/colorfondoscuro</item>
+        <item name="android:background">?android:attr/windowBackground</item>
     </style>
+
+
+
 </resources>
