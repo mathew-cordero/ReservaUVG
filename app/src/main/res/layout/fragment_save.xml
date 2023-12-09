@@ -5,13 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".Navegacion.Save">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:text="MIS GUARDADOS"
-        android:textSize="40dp"
-        android:background="@color/white"/>
+        android:orientation="vertical">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listareservados"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
 
 </FrameLayout>
