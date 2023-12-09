@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardviewaula"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    card_view:cardBackgroundColor="@color/colorwidghetclaro"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp"
+    card_view:contentPadding="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:background="@color/white"
+        android:radius="10dp">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/item_image"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentLeft="true"
+           >
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CIT 210"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:id="@+id/item_titule"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/item_image"
+            android:layout_toRightOf="@+id/item_image"
+            android:layout_alignParentTop="true">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disponible: SI"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:id="@+id/textdisponible"
+            android:layout_toEndOf="@+id/item_image"
+            android:layout_toRightOf="@+id/item_image"
+            android:layout_below="@+id/item_titule">
+        </TextView>
+
+        <Button
+            android:id="@+id/button_reservar"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/textdisponible"
+            android:layout_toRightOf="@+id/textdisponible"
+            android:backgroundTint="@color/colorwidghet"
+            android:text="Reservar"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/button_horarios"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/textdisponible"
+            android:layout_toRightOf="@+id/textdisponible"
+            android:backgroundTint="@color/colorwidghet"
+            android:text="Horarios"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/button_reservar"/>
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

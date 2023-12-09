@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.reservauvg.Aulas.Adapter
 import com.example.reservauvg.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,8 +39,12 @@ class Home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view:View =inflater.inflate(R.layout.fragment_home, container, false)
+        val milistadeAulas = view.findViewById<RecyclerView>(R.id.listadeAulas)
+        val adapter = Adapter()
+        milistadeAulas.layoutManager = LinearLayoutManager(context)
+        milistadeAulas.adapter=adapter
+        return view
     }
 
     companion object {
