@@ -39,9 +39,15 @@ class Account : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_account, container, false)
         val imageViewProfile: ImageView = view.findViewById(R.id.imageViewprofile)
+        val imagebanner:ImageView = view.findViewById(R.id.imageBanner)
+
         imageViewProfile.setOnClickListener {
             // Show the AlertDialog when the ImageView is clicked
             showAlertDialog()
+        }
+
+        imagebanner.setOnClickListener {
+            showBanneralert()
         }
         // Inflate the layout for this fragment
         return view
@@ -89,6 +95,19 @@ class Account : Fragment() {
         }
 
 
+    }
+
+    private fun showBanneralert(){
+        val alertDialogBuilder = AlertDialog.Builder(requireContext())
+        val inflater:LayoutInflater = getLayoutInflater()
+        val view:View = inflater.inflate(R.layout.dialog_banner,null)
+        alertDialogBuilder.setView(view)
+        val dialogo:AlertDialog = alertDialogBuilder.create()
+        dialogo.show()
+        val imagenicono:ImageView = view.findViewById(R.id.iconImage)
+        imagenicono.setOnClickListener {
+            showAlertDialog()
+        }
     }
 
 }
