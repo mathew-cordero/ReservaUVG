@@ -4,14 +4,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.preference.PreferenceManager
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.reservauvg.Auth.Login
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //verificamos el modo oscuro
+        val prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        val preferencia = prefs.getBoolean(mysettings.darkmode,false)
+
+        if(preferencia==false){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+
         if (getSupportActionBar() != null) {
             getSupportActionBar()?.hide();
         }
