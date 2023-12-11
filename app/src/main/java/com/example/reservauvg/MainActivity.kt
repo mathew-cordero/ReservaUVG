@@ -12,6 +12,9 @@ import com.example.reservauvg.Auth.Login
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (getSupportActionBar() != null) {
+            getSupportActionBar()?.hide();
+        }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         setContentView(R.layout.splashscreen)

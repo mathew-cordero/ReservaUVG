@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.Toast
 
@@ -42,16 +40,19 @@ class Home : Fragment() {
         }
     }
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view:View =inflater.inflate(R.layout.fragment_home, container, false)
         val milistadeAulas = view.findViewById<RecyclerView>(R.id.listadeAulas)
         searchView = view.findViewById(R.id.searchView)
 
         addDataToList()
-        adapter = Adapter(mList)
+        adapter = Adapter(context,mList)
         milistadeAulas.layoutManager = LinearLayoutManager(context)
         milistadeAulas.adapter=adapter
 

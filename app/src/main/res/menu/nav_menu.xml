@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <item
+        android:id="@+id/nav_darkmode"
+        android:icon="@drawable/baseline_mode_night_24"
+        android:title="Modo Oscuro"></item>
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/baseline_error_24"
+        android:title="Acerca De"
+        ></item>
+    <item
+        android:id="@+id/nav_conditions"
+        android:icon="@drawable/baseline_android_24"
+        android:title="Terminos y Condiciones"></item>
+    <item
+        android:id="@+id/nav_politics"
+        android:icon="@drawable/baseline_policy_24"
+        android:title="Politicas y privacidad"></item>
+
+    <item
+        android:id="@+id/nav_notify"
+        android:icon="@drawable/baseline_notifications_none_24"
+        android:title="Activar/Desactivas Notificaciones"></item>
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/baseline_logout_24"
+        android:title="Cerrar Sesion"></item>
+
+</menu>

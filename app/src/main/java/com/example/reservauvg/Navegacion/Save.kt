@@ -44,7 +44,7 @@ class Save : Fragment() {
         val view:View =inflater.inflate(R.layout.fragment_save, container, false)
         val milistadeAulas = view.findViewById<RecyclerView>(R.id.listareservados)
         addDataToList()
-        adapter = Adapter_Guardados(mList)
+        adapter = Adapter_Guardados(context,mList)
         milistadeAulas.layoutManager = LinearLayoutManager(context)
         milistadeAulas.adapter=adapter
         return view

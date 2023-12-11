@@ -26,7 +26,6 @@
             android:layout_height="150dp"
             android:layout_marginTop="130dp"
             android:adjustViewBounds="true"
-            android:background="@drawable/round_background"
             android:scaleType="centerCrop"
             android:src="@drawable/userprueba"
             app:layout_constraintEnd_toEndOf="@+id/imageBanner"

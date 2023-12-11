@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Aula"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:textSize="35dp"></TextView>
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/baseline_delete_forever_24"
+        android:layout_margin="15dp"
+        ></ImageView>
+    
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Text_id_alertdelete"
+        android:text="El salon 210 se quitara de su lista de eventos"
+        android:textSize="22dp"
+        android:textAlignment="center"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Quieres Eliminarlo?"
+        android:textSize="22dp"
+        android:textStyle="bold"></TextView>
+
+    <Button
+        android:id="@+id/button_si"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SI"
+        android:drawableLeft="@drawable/baseline_check_circle_24"
+        android:drawableTint="@color/colorfondoscuro"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/colorfondoscuro"
+        />
+
+    <Button
+        android:id="@+id/button_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:drawableLeft="@drawable/baseline_cancel_24"
+        android:drawableTint="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@android:color/holo_red_dark"
+        />
+
+</LinearLayout>

@@ -1,5 +1,7 @@
 package com.example.reservauvg.Aulas
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +10,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reservauvg.R
+import com.example.reservauvg.Reserva.Formulario
+import com.example.reservauvg.Reserva.VistaReserva
 
-class Adapter(var mList: List<Salon>): RecyclerView.Adapter<Adapter.ViewHolder>(){
+
+class Adapter(private val context: Context?, var mList: List<Salon>): RecyclerView.Adapter<Adapter.ViewHolder>(){
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
@@ -31,6 +36,18 @@ class Adapter(var mList: List<Salon>): RecyclerView.Adapter<Adapter.ViewHolder>(
         }
         viewHolder.disponibilidad.text = "Disponible: "+disponibilidad
         viewHolder.imagen.setImageResource(mList[i].imagen)
+
+        //Imagen de nuestro cardview
+        viewHolder.imagen.setOnClickListener {
+            val intent:Intent =  Intent(context,VistaReserva::class.java)
+            context?.startActivity(intent)
+        }
+        //Ir al formulario de reserva
+        viewHolder.boton_reserva.setOnClickListener {
+            val intent:Intent = Intent(context, Formulario::class.java)
+            context?.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int {

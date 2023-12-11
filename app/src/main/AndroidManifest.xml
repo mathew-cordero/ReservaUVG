@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ReservaUVG"
         tools:targetApi="31">
         <activity
+            android:name=".Reserva.Formulario"
+            android:exported="false" />
+        <activity
+            android:name=".Reserva.VistaReserva"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity2"
             android:exported="false" />
         <activity

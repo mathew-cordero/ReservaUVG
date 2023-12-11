@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ReservaUVG" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.ReservaUVG" parent="Theme.Material3.DayNight">
         <item name="colorPrimary">@color/colorfondo</item>
         <item name="colorPrimaryVariant">@color/colorfondo</item>
         <!-- ON primary ayudara a que cuando presiones el boton se torne la animacion de un color. -->
