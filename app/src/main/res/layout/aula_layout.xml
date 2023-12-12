@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="12dp"
-    card_view:cardBackgroundColor="@color/colorwidghetclaro"
+    style="@style/CardViewStyle"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="4dp"
     card_view:contentPadding="3dp">
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="0dp"
-        android:background="@color/white"
+        style="@style/RelativeStyleforcard"
         android:radius="10dp">
         <ImageView
             android:layout_width="80dp"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="CIT 210"
             android:textSize="30sp"
-            android:textColor="@color/black"
+            style="@style/TextColor"
             android:id="@+id/item_titule"
             android:textStyle="bold"
             android:layout_toEndOf="@+id/item_image"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Disponible: SI"
-            android:textColor="@color/black"
+            style="@style/TextColor"
             android:textSize="20sp"
             android:id="@+id/textdisponible"
             android:layout_toEndOf="@+id/item_image"
@@ -60,10 +60,10 @@
             android:layout_marginTop="4dp"
             android:layout_toEndOf="@+id/textdisponible"
             android:layout_toRightOf="@+id/textdisponible"
-            android:backgroundTint="@color/colorwidghet"
+
             android:text="Reservar"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            style="@style/BottonStyle"
             android:textSize="13sp"
             android:textStyle="bold" />
         <Button
@@ -75,10 +75,10 @@
             android:layout_marginTop="2dp"
             android:layout_toEndOf="@+id/textdisponible"
             android:layout_toRightOf="@+id/textdisponible"
-            android:backgroundTint="@color/colorwidghet"
+
             android:text="Horarios"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            style="@style/BottonStyle"
             android:textSize="13sp"
             android:textStyle="bold"
             android:layout_below="@+id/button_reservar"/>

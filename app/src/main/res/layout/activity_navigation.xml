@@ -18,7 +18,7 @@
             android:id="@+id/frame_layout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/white"
+
 
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,9 +32,6 @@
             style="@style/BottonNavigation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorfondo"
-            app:backgroundTint="@color/colorfondo"
-            app:itemBackground="@color/colorfondo"
             app:itemActiveIndicatorStyle="@style/BottonNavigation"
             app:labelVisibilityMode="selected"
             app:layout_constraintBottom_toBottomOf="parent"

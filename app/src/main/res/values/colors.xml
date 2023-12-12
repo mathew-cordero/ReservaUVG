@@ -6,10 +6,13 @@
     <color name="colorfondoscuro">#203D26</color>
     <color name="colorwidghet2">#442A2F</color>
     <color name="colorwidghet">#7D2330</color>
+    <color name="colorwidghetclaroo">#BEA5A9</color>
     <color name= "blanco2">#C7C7C7</color>
     <color name="bluewidghet">#414BB2</color>
+    <color name="bluewidghetclaro">#858AC1</color>
     <color name="colorwidghetclaro">#7E83424B</color>
     <color name="underline">#66A873</color>
+    <color name= "colorfondoclaro">#6ED583</color>
 
 
 </resources>

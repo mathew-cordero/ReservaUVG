@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:backgroundTint="@color/white"
-    android:background="@color/white">
+    >
     <Space
         android:layout_width="match_parent"
         android:layout_height="32dp" />
@@ -14,9 +13,9 @@
         android:id="@+id/buttontomar"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorfondo"
+
         android:text="TOMAR FOTO"
-        android:textColor="@color/white"
+        style="@style/BottonStyle2"
         android:textSize="30dp"
         app:cornerRadius="10dp" />
     <Space
@@ -26,9 +25,9 @@
         android:id="@+id/buttonlibrary"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorfondo"
+
         android:text="BIBLIOTECA"
-        android:textColor="@color/white"
+        style="@style/BottonStyle2"
         android:textSize="30dp"
         app:cornerRadius="10dp" />
     <Space

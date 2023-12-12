@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="12dp"
-    card_view:cardBackgroundColor="@color/colorwidghetclaro"
+    style="@style/CardViewStyle"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="4dp"
     card_view:contentPadding="3dp">
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="0dp"
-        android:background="@color/white"
+        style="@style/RelativeStyleforcard"
         android:radius="10dp">
         <ImageView
             android:layout_width="100dp"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="CIT 210"
             android:textSize="30sp"
-            android:textColor="@color/black"
+            style="@style/TextColor"
             android:id="@+id/item_titulesave"
             android:textStyle="bold"
             android:layout_toEndOf="@+id/item_imagesave"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2023-11-28"
-            android:textColor="@color/black"
+            style="@style/TextColor"
             android:textSize="20sp"
             android:id="@+id/textofecha"
             android:layout_toEndOf="@+id/item_imagesave"
@@ -63,7 +63,7 @@
             android:layout_toEndOf="@+id/item_imagesave"
             android:layout_toRightOf="@+id/item_imagesave"
             android:text="15:00-16:00"
-            android:textColor="@color/black"
+            style="@style/TextColor"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
 
@@ -76,10 +76,10 @@
             android:layout_marginTop="4dp"
             android:layout_toEndOf="@+id/textofecha"
             android:layout_toRightOf="@+id/textofecha"
-            android:backgroundTint="@color/colorwidghet"
+
             android:text="Cancelar"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            style="@style/BottonStyle"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -93,10 +93,10 @@
             android:layout_marginTop="2dp"
             android:layout_toEndOf="@+id/textofecha"
             android:layout_toRightOf="@+id/textofecha"
-            android:backgroundTint="@color/colorwidghet"
+
             android:text="Horarios"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            style="@style/BottonStyle"
             android:textSize="16sp"
             android:textStyle="bold" />
 

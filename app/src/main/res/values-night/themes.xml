@@ -1,7 +1,72 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.ReservaUVG" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/colorfondo</item>
+        <item name="colorPrimaryVariant">@color/colorfondo</item>
+        <item name = "colorOnPrimary">@color/colorfondoclaro</item>
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+
+
+    <style name="BottonNavigation">
+
+        <item name="itemIconTint">@color/white</item>
+        <item name="itemTextColor">@color/white</item>
+        <item name="android:itemBackground">@color/colorfondoscuro</item>
+        <item name="android:background">#1B1F1B</item>
+    </style>
+
+    <style name="BottonStyle">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="BottonStyle2">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CardViewStyle">
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="RelativeStyleforcard">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="IconoColor">
+        <item name="tint">@color/white</item>
+    </style>
+
+
+    <style name="ButtonCanva">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/colorfondoclaro</item>
+        <item name="iconTint">@color/colorfondoclaro</item>
+    </style>
+
+    <style name="ButtonCalendar">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/colorwidghetclaroo</item>
+        <item name="iconTint">@color/colorwidghetclaroo</item>
+    </style>
+
+    <style name="ButtonEmail">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/bluewidghetclaro</item>
+        <item name="iconTint">@color/bluewidghetclaro</item>
+    </style>
+
+    <style name="TextColorAlert">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+    <style name="IconAlertColor">
+        <item name="tint">@android:color/holo_red_light</item>
     </style>
 </resources>

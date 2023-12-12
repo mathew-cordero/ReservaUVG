@@ -19,7 +19,7 @@
         android:paddingTop="8dp"
         android:textSize="20dp"
         android:text="Nombre Completo"
-        android:textColor="@color/black"
+        style="@style/TextColor"
         android:textStyle="bold"
         ></TextView>
     

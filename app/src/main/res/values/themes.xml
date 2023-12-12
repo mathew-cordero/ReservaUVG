@@ -4,7 +4,7 @@
         <item name="colorPrimary">@color/colorfondo</item>
         <item name="colorPrimaryVariant">@color/colorfondo</item>
         <!-- ON primary ayudara a que cuando presiones el boton se torne la animacion de un color. -->
-        <item name = "colorOnPrimary">@color/colorfondo</item>
+        <item name = "colorOnPrimary">@color/colorfondoclaro</item>
 
         <item name="android:statusBarColor">@color/colorfondo</item>
     </style>
@@ -13,12 +13,61 @@
     
     <style name="BottonNavigation">
 
-        <item name="itemIconTint">@color/white</item>
-        <item name="itemTextColor">@color/white</item>
+        <item name="itemIconTint">@color/black</item>
+        <item name="itemTextColor">@color/black</item>
         <item name="android:itemBackground">@color/colorfondoscuro</item>
         <item name="android:background">?android:attr/windowBackground</item>
     </style>
 
 
+    <style name="BottonStyle">
+        <item name="android:backgroundTint">@color/colorwidghet</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 
+    <style name="BottonStyle2">
+        <item name="android:backgroundTint">@color/colorfondo</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextColor">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="CardViewStyle">
+        <item name="cardBackgroundColor">@color/colorwidghet</item>
+    </style>
+
+    <style name="RelativeStyleforcard">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="IconoColor">
+        <item name="tint">@color/black</item>
+    </style>
+
+    <style name="ButtonCanva">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/colorfondo</item>
+        <item name="iconTint">@color/colorfondo</item>
+    </style>
+
+    <style name="ButtonCalendar">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/colorwidghet</item>
+        <item name="iconTint">@color/colorwidghet</item>
+    </style>
+
+    <style name="ButtonEmail">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/bluewidghet</item>
+        <item name="iconTint">@color/bluewidghet</item>
+    </style>
+
+    <style name="TextColorAlert">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+    <style name="IconAlertColor">
+        <item name="tint">@android:color/holo_red_dark</item>
+    </style>
 </resources>

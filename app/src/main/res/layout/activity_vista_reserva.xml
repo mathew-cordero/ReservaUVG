@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        app:cardBackgroundColor="@color/colorwidghetclaro"
+        style="@style/CardViewStyle"
         app:cardCornerRadius="4dp"
         app:cardElevation="4dp"
         app:contentPadding="3dp"
@@ -26,7 +26,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            style="@style/RelativeStyleforcard"
             android:orientation="vertical"
             android:padding="0dp"
             android:radius="10dp">
@@ -35,6 +35,7 @@
                 android:id="@+id/aula_image"
                 android:layout_width="250dp"
                 android:layout_height="150dp"
+                style="@style/TextColor"
                 android:src="@drawable/imagen_reserva"></ImageView>
 
             <TextView
@@ -43,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:text="CIT 510"
+                style="@style/TextColor"
                 android:textSize="20sp"
                 android:textStyle="bold"></TextView>
 
@@ -51,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                style="@style/TextColor"
                 android:text="Edificio CIT. Piso 5. Aula 510"
                 android:textSize="10sp"></TextView>
         </LinearLayout>
@@ -72,9 +75,9 @@
         android:id="@+id/aula_boton_reservar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorwidghet"
+
         android:text="RESERVAR"
-        android:textColor="@color/white"
+        style="@style/BottonStyle"
         android:textSize="30dp"
         android:textStyle="bold"
         app:cornerRadius="8dp"

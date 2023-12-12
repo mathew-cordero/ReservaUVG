@@ -127,7 +127,9 @@
             android:layout_marginEnd="9dp"
             android:layout_toEndOf="@+id/layout_fecha"
             android:layout_toRightOf="@+id/layout_fecha"
-            android:src="@drawable/baseline_calendar_month_24"></ImageView>
+            style="@style/IconoColor"
+            android:src="@drawable/baseline_calendar_month_24"
+            ></ImageView>
 
     </RelativeLayout>
 
@@ -173,7 +175,9 @@
             android:layout_marginEnd="9dp"
             android:layout_toEndOf="@+id/layout_hora_inicio"
             android:layout_toRightOf="@+id/layout_hora_inicio"
-            android:src="@drawable/baseline_access_time_24"></ImageView>
+            style="@style/IconoColor"
+            android:src="@drawable/baseline_access_time_24"
+            ></ImageView>
 
     </RelativeLayout>
 
@@ -219,7 +223,9 @@
             android:layout_marginEnd="9dp"
             android:layout_toEndOf="@+id/layout_hora_final"
             android:layout_toRightOf="@+id/layout_hora_final"
-            android:src="@drawable/baseline_access_time_24"></ImageView>
+            android:src="@drawable/baseline_access_time_24"
+            style="@style/IconoColor"
+            ></ImageView>
 
     </RelativeLayout>
 
@@ -229,9 +235,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="RESERVAR"
-        android:backgroundTint="@color/colorwidghet"
         android:textSize="25dp"
-        android:textColor="@color/white"
+        style="@style/BottonStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativelayout_horafinal" />
