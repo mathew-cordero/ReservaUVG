@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reserva.VistaReserva"
+
+
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        style="@style/CardViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginTop="4dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:contentPadding="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            style="@style/RelativeStyleforcard"
+            android:layout_width="320dp"
+            android:layout_height="350dp"
+            android:orientation="vertical"
+            android:padding="0dp"
+            android:radius="10dp">
+
+            <ImageView
+                android:id="@+id/aula_image"
+                style="@style/TextColor"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:src="@drawable/imagen_reserva"></ImageView>
+
+            <TextView
+                android:id="@+id/aula_titulo"
+                style="@style/TextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="CIT 510"
+                android:textSize="50sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/aula_direccion"
+                style="@style/TextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Edificio CIT. Piso 5. Aula 510"
+                android:textSize="25sp"></TextView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <WebView
+        android:id="@+id/aula_web"
+        android:layout_width="563dp"
+        android:layout_height="512dp"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022">
+
+    </WebView>
+
+    <Button
+        android:id="@+id/aula_boton_reservar"
+        style="@style/BottonStyle"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="36dp"
+        android:text="RESERVAR"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.626" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

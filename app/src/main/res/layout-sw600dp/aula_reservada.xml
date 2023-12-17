@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardviewguardada"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    style="@style/CardViewStyle"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp"
+    card_view:contentPadding="3dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:id="@+id/layoutguardado"
+        style="@style/RelativeStyleforcard"
+        android:radius="10dp">
+
+        <ImageView
+            android:id="@+id/item_imagesave"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:id="@+id/item_titulesave"
+            style="@style/TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CIT 210"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toEndOf="@+id/item_imagesave"
+            card_view:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/textofecha"
+            style="@style/TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2023-11-28"
+            android:textSize="25sp"
+            card_view:layout_constraintStart_toEndOf="@+id/item_imagesave"
+            card_view:layout_constraintTop_toBottomOf="@+id/item_titulesave"></TextView>
+
+        <TextView
+            android:id="@+id/text_horario"
+            style="@style/TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:00-16:00"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toStartOf="@+id/textofecha"
+            card_view:layout_constraintTop_toBottomOf="@+id/textofecha"></TextView>
+
+        <Button
+            android:id="@+id/button_cancelar"
+            style="@style/BottonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="24dp"
+            android:text="Cancelar"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toEndOf="@+id/textofecha"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_horariosguardados"
+            style="@style/BottonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:text="Horarios"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toEndOf="@+id/button_cancelar"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.433" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
