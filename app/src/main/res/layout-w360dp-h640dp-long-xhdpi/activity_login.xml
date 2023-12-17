@@ -10,14 +10,14 @@
     <Button
         android:id="@+id/botoninicio"
 
-        android:layout_width="356dp"
-        android:layout_height="65dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/white"
         android:text="INICIAR SESION"
         android:textColor="@color/colorfondo"
-        android:textSize="40sp"
+        android:textSize="24sp"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,8 +1,11 @@
 package com.example.reservauvg.Reserva
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
+import com.example.reservauvg.Navegacion.Navigation
 import com.example.reservauvg.R
 
 class VistaReserva : AppCompatActivity() {
@@ -17,6 +20,12 @@ class VistaReserva : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setIcon(R.drawable.rulogo_decolor)
+        val reserva_boton:Button = findViewById(R.id.aula_boton_reservar)
+
+        reserva_boton.setOnClickListener {
+            val intent = Intent(this@VistaReserva, Formulario::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

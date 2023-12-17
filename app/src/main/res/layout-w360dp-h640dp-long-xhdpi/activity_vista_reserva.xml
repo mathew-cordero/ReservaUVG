@@ -33,9 +33,9 @@
 
             <ImageView
                 android:id="@+id/aula_image"
-                android:layout_width="250dp"
-                android:layout_height="150dp"
                 style="@style/TextColor"
+                android:layout_width="216dp"
+                android:layout_height="119dp"
                 android:src="@drawable/imagen_reserva"></ImageView>
 
             <TextView
@@ -62,8 +62,8 @@
 
     <WebView
         android:id="@+id/aula_web"
-        android:layout_width="393dp"
-        android:layout_height="367dp"
+        android:layout_width="355dp"
+        android:layout_height="306dp"
         android:layout_margin="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

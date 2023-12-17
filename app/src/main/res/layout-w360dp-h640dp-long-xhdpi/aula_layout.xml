@@ -5,7 +5,7 @@
     android:id="@+id/cardviewaula"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="12dp"
+    android:layout_margin="6dp"
     style="@style/CardViewStyle"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="4dp"
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CIT 210"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             card_view:layout_constraintStart_toEndOf="@+id/item_image"
             card_view:layout_constraintTop_toTopOf="parent"></TextView>
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Disponible: SI"
-            android:textSize="20sp"
+            android:textSize="16sp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/item_image"
             card_view:layout_constraintTop_toBottomOf="@+id/item_titule"
@@ -55,14 +55,13 @@
             android:id="@+id/button_reservar"
             style="@style/BottonStyle"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="38dp"
 
             android:text="Reservar"
             android:textAlignment="center"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.627"
             card_view:layout_constraintStart_toEndOf="@+id/item_titule"
             card_view:layout_constraintTop_toTopOf="parent"></Button>
 
@@ -70,18 +69,18 @@
             android:id="@+id/button_horarios"
             style="@style/BottonStyle"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="4dp"
             android:text="Horarios"
             android:textAlignment="center"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.537"
-            card_view:layout_constraintStart_toEndOf="@+id/textdisponible"
+            card_view:layout_constraintHorizontal_bias="0.492"
+            card_view:layout_constraintStart_toEndOf="@+id/item_titule"
             card_view:layout_constraintTop_toBottomOf="@+id/button_reservar"
-            card_view:layout_constraintVertical_bias="1.0" />
+            card_view:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
