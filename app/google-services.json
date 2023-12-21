@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "944817935697",
+    "project_id": "reservauvg-9d065",
+    "storage_bucket": "reservauvg-9d065.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944817935697:android:000aef6dd933019629ef70",
+        "android_client_info": {
+          "package_name": "com.example.reservauvg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944817935697-gotmlkm4jgab95mur5af23j422c4nnkl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reservauvg",
+            "certificate_hash": "c8c952ff0b4752cfb2a1181f8416489236cbb4da"
+          }
+        },
+        {
+          "client_id": "944817935697-j6823pqjphlh8hnle7m8orl1vegu0nng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi1i8wQ--fJlzYLxnx0GDXHqSBCCDhABY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944817935697-j6823pqjphlh8hnle7m8orl1vegu0nng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

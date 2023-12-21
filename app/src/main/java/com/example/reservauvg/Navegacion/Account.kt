@@ -1,5 +1,7 @@
 package com.example.reservauvg.Navegacion
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,8 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import com.example.reservauvg.Auth.Login
 import com.example.reservauvg.R
+import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,6 +36,8 @@ class Account : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
     }
 
     override fun onCreateView(
@@ -40,7 +47,12 @@ class Account : Fragment() {
         val view = inflater.inflate(R.layout.fragment_account, container, false)
         val imageViewProfile: ImageView = view.findViewById(R.id.imageViewprofile)
         val imagebanner:ImageView = view.findViewById(R.id.imageBanner)
+        val prefs = requireContext().getSharedPreferences(getString(R.string.prefsfile), Context.MODE_PRIVATE)
+        val usuario:String? = prefs.getString("user", null)
+        val textUsuario:TextView = view.findViewById(R.id.nombredecuenta)
+        val buttoncerrarsesion:Button = view.findViewById(R.id.closesesionbutton)
 
+        textUsuario.text = usuario
         imageViewProfile.setOnClickListener {
             // Show the AlertDialog when the ImageView is clicked
             showAlertDialog()
@@ -49,6 +61,20 @@ class Account : Fragment() {
         imagebanner.setOnClickListener {
             showBanneralert()
         }
+
+        buttoncerrarsesion.setOnClickListener {
+            val prets  = requireContext().getSharedPreferences(getString(R.string.prefsfile),Context.MODE_PRIVATE).edit()
+            prets.clear()
+            prets.apply()
+            FirebaseAuth.getInstance().signOut()
+            val login = Intent(requireContext(), Login::class.java)
+            startActivity(login)
+            requireActivity().finish()
+        }
+
+
+
+
         // Inflate the layout for this fragment
         return view
     }

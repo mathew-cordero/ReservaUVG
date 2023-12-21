@@ -1,5 +1,7 @@
 package com.example.reservauvg.Navegacion
 
+import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -7,17 +9,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.reservauvg.Auth.Login
 import com.example.reservauvg.R
 import com.example.reservauvg.databinding.ActivityMainBinding
 import com.example.reservauvg.databinding.ActivityNavigationBinding
 import com.example.reservauvg.mysettings
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class Navigation : AppCompatActivity() {
     private lateinit var binding: ActivityNavigationBinding
@@ -35,6 +40,18 @@ class Navigation : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNavigationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //obtenemos el numero de la cuenta y el email
+        val bundle:Bundle? = intent.extras
+        val emmail:String? = bundle?.getString("email")
+        val user:String? = bundle?.getString("user")
+        val prets  = getSharedPreferences(getString(R.string.prefsfile), Context.MODE_PRIVATE).edit()
+        prets.putString("email",emmail)
+        prets.putString("user",user)
+        prets.apply()
+
+
+
         //var toolbar:Toolbar? = findViewById(R.id.toolbar)
         val drawerLayout:DrawerLayout = findViewById(R.id.drawerlayout)
         val navView:NavigationView = findViewById(R.id.nav_view)
@@ -61,12 +78,22 @@ class Navigation : AppCompatActivity() {
             true
         }
 
+        //ahora vamos a cambiar el nombre
+        val headerView = navView.getHeaderView(0)
+        val headerTextView: TextView = headerView.findViewById(R.id.username)
+        val prefs = getSharedPreferences(getString(R.string.prefsfile), Context.MODE_PRIVATE)
+        val usuario:String? = prefs.getString("user", null)
+        headerTextView.text=usuario
+
         //usar los botones del navigationdrawer
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
+
                 R.id.nav_darkmode-> {
                     //vamos a activar el modo oscuro
                     val editor = prefs.edit()
+
+
                     val preferencia = prefs.getBoolean(mysettings.darkmode,false)
 
                     if(preferencia==false){
@@ -86,7 +113,15 @@ class Navigation : AppCompatActivity() {
                 R.id.nav_about ->Toast.makeText(applicationContext,"Sobre",Toast.LENGTH_SHORT).show()
                 R.id.nav_conditions ->Toast.makeText(applicationContext,"Condiciones",Toast.LENGTH_SHORT).show()
                 R.id.nav_politics ->Toast.makeText(applicationContext,"Politicas",Toast.LENGTH_SHORT).show()
-                R.id.logout->Toast.makeText(applicationContext,"SALIR",Toast.LENGTH_SHORT).show()
+                R.id.logout->{
+                    val prets  = getSharedPreferences(getString(R.string.prefsfile),Context.MODE_PRIVATE).edit()
+                    prets.clear()
+                    prets.apply()
+                    FirebaseAuth.getInstance().signOut()
+                    val login = Intent(this@Navigation, Login::class.java)
+                    startActivity(login)
+                    finish()
+                }
                 R.id.nav_notify->Toast.makeText(applicationContext,"NOTIFICACIONES ACTIVADAS",Toast.LENGTH_SHORT).show()
 
             }
