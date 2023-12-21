@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseAuth
 class Navigation : AppCompatActivity() {
     private lateinit var binding: ActivityNavigationBinding
     private lateinit var toogle:ActionBarDrawerToggle
-    private lateinit var prefs: SharedPreferences
+    private lateinit var preferencias: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -58,7 +58,7 @@ class Navigation : AppCompatActivity() {
         toogle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
         drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
-        prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext) // Inicializa prefs aquí
+        preferencias = PreferenceManager.getDefaultSharedPreferences(applicationContext) // Inicializa prefs aquí
         //setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -91,10 +91,10 @@ class Navigation : AppCompatActivity() {
 
                 R.id.nav_darkmode-> {
                     //vamos a activar el modo oscuro
-                    val editor = prefs.edit()
+                    val editor = preferencias.edit()
 
 
-                    val preferencia = prefs.getBoolean(mysettings.darkmode,false)
+                    val preferencia = preferencias.getBoolean(mysettings.darkmode,false)
 
                     if(preferencia==false){
                         editor.putBoolean(mysettings.darkmode,true)
