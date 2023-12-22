@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.reservauvg.R
 import com.example.reservauvg.Reserva.Formulario
 import com.example.reservauvg.Reserva.VistaReserva
+import com.google.firebase.storage.FirebaseStorage
+import com.bumptech.glide.Glide
 
 
 class Adapter(private val context: Context?, var mList: List<Salon>): RecyclerView.Adapter<Adapter.ViewHolder>(){
@@ -35,7 +37,22 @@ class Adapter(private val context: Context?, var mList: List<Salon>): RecyclerVi
             disponibilidad = "NO" //si no esta diponible
         }
         viewHolder.disponibilidad.text = "Disponible: "+disponibilidad
-        viewHolder.imagen.setImageResource(mList[i].imagen)
+
+        //vamos a definir la imagen
+        val storage = FirebaseStorage.getInstance()
+        val storageReference = storage.getReferenceFromUrl(mList[i].imagen)
+        storageReference.downloadUrl
+            .addOnSuccessListener {uri ->
+                // Utilizar Glide (o cualquier otra biblioteca de carga de imágenes) para cargar y mostrar la imagen
+                Glide.with(context!!)
+                    .load(uri)
+                    .into(viewHolder.imagen)
+
+        }.addOnFailureListener {
+
+            }
+
+
 
         //Imagen de nuestro cardview
         viewHolder.imagen.setOnClickListener {
@@ -71,7 +88,10 @@ class Adapter(private val context: Context?, var mList: List<Salon>): RecyclerVi
             disponibilidad= itemView.findViewById(R.id.textdisponible)
             boton_reserva =  itemView.findViewById(R.id.button_reservar)
             boton_horarios = itemView.findViewById(R.id.button_horarios)
+
+
         }
+
     }
 
 }

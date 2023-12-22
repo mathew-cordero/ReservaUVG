@@ -1,18 +1,25 @@
 package com.example.reservauvg.Navegacion
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reservauvg.Aulas.Adapter
 import com.example.reservauvg.Aulas.Salon
 import com.example.reservauvg.R
+import com.example.reservauvg.backend.GetAllClassroom
+import com.google.firebase.storage.FirebaseStorage
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.Locale
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,11 +54,22 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        //obtenemos todas las clases.
+        GetAllClassroom(){ clasesObtenidas ->
+            mList = clasesObtenidas as ArrayList<Salon>
+            Log.e("Firebaserespuesta", mList[0].nombre)
+            adapter.setFilteredList(mList)
+            adapter.notifyDataSetChanged()
+        }
+
+        
         val view:View =inflater.inflate(R.layout.fragment_home, container, false)
         val milistadeAulas = view.findViewById<RecyclerView>(R.id.listadeAulas)
         searchView = view.findViewById(R.id.searchView)
 
-        addDataToList()
+
+
+
         adapter = Adapter(context,mList)
         milistadeAulas.layoutManager = LinearLayoutManager(context)
         milistadeAulas.adapter=adapter
@@ -95,15 +113,7 @@ class Home : Fragment() {
 
 
     //esta funcion modifica la lista
-    private fun addDataToList() {
-        mList.add(Salon("CIT 210", true,R.drawable.imagen))
-        mList.add(Salon("CIT 555", true,R.drawable.imagen))
-        mList.add(Salon("CIT 155", false,R.drawable.imagen))
-        mList.add(Salon("CIT 255", false,R.drawable.imagen))
-        mList.add(Salon("CIT 355", false,R.drawable.imagen))
-        mList.add(Salon("CIT 520", true,R.drawable.imagen))
 
-    }
 
     private fun filterList(query: String?) {
 
