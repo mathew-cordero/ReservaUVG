@@ -45,9 +45,11 @@ class Navigation : AppCompatActivity() {
         val bundle:Bundle? = intent.extras
         val emmail:String? = bundle?.getString("email")
         val user:String? = bundle?.getString("user")
+        val token:String? = bundle?.getString("token")
         val prets  = getSharedPreferences(getString(R.string.prefsfile), Context.MODE_PRIVATE).edit()
         prets.putString("email",emmail)
         prets.putString("user",user)
+        prets.putString("token",token)
         prets.apply()
 
 

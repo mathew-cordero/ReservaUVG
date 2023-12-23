@@ -2,6 +2,7 @@ package com.example.reservauvg.Navegacion
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -49,8 +50,35 @@ class Account : Fragment() {
         val imagebanner:ImageView = view.findViewById(R.id.imageBanner)
         val prefs = requireContext().getSharedPreferences(getString(R.string.prefsfile), Context.MODE_PRIVATE)
         val usuario:String? = prefs.getString("user", null)
+
+        //obtenemos los widgets
         val textUsuario:TextView = view.findViewById(R.id.nombredecuenta)
         val buttoncerrarsesion:Button = view.findViewById(R.id.closesesionbutton)
+        val btncanva:Button = view.findViewById(R.id.button4)
+        val btncalendar:Button = view.findViewById(R.id.button5)
+        val btncorreo:Button = view.findViewById(R.id.button6)
+
+        //boton de canva
+        btncanva.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            val urlcanva:String = "https://uvg.instructure.com"
+            intent.data = Uri.parse(urlcanva)
+            context?.startActivity(intent)
+        }
+
+        btncalendar.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            val urlcale:String = "https://calendar.google.com"
+            intent.data = Uri.parse(urlcale)
+            context?.startActivity(intent)
+        }
+
+        btncorreo.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            val urlcorreo:String = "https://mail.google.com"
+            intent.data = Uri.parse(urlcorreo)
+            context?.startActivity(intent)
+        }
 
         textUsuario.text = usuario
         imageViewProfile.setOnClickListener {

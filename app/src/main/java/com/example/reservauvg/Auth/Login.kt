@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ReportFragment.Companion.reportFragment
 import com.example.reservauvg.Navegacion.Navigation
 import com.example.reservauvg.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -47,16 +48,18 @@ class Login : AppCompatActivity() {
         val prets  = getSharedPreferences(getString(R.string.prefsfile), Context.MODE_PRIVATE)
         val email:String? = prets.getString("email",null)
         val user:String? = prets.getString("user",null)
-        if(email!=null && user!=null){
-            showHome(email,user)
+        val token:String? = prets.getString("token",null)
+        if(email!=null && user!=null && token!=null){
+            showHome(email,user,token)
         }
 
     }
 
-    private fun showHome(email:String,user:String){
+    private fun showHome(email:String,user:String,token:String){
         val homeIntent = Intent(this@Login, Navigation::class.java).apply {
             putExtra("email",email)
             putExtra("user",user)
+            putExtra("token",token)
         }
         startActivity(homeIntent)
         finish()
@@ -72,7 +75,7 @@ class Login : AppCompatActivity() {
                     val credential = GoogleAuthProvider.getCredential(account.idToken,null)
                     FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
                         if(it.isSuccessful){
-                            showHome(account.email?:"",account.givenName?:"")
+                            showHome(account.email?:"",account.givenName?:"",account.idToken?:"")
                         }else{
                             showAlert()
                             Log.d("Error google","Error en VALIDAR CREDENCIALES")

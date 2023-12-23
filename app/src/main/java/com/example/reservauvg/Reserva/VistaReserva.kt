@@ -1,5 +1,6 @@
 package com.example.reservauvg.Reserva
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -62,7 +63,13 @@ class VistaReserva : AppCompatActivity() {
         web_aula.webViewClient = WebViewClient()
         web_aula.webChromeClient = WebChromeClient()
         web_aula.settings.javaScriptEnabled = true
-        web_aula.loadUrl(salonMostrar.link)
+
+        //vamos a obtener el link
+        val prefs = getSharedPreferences(getString(R.string.prefsfile), Context.MODE_PRIVATE)
+        val tokenuser:String? = prefs.getString("token",null)
+        val idcalendario:String = salonMostrar.idcalendar
+        val calendarUrl = "https://calendar.google.com/calendar/embed?src=${idcalendario}&ctz=America/Guatemala&mode=AGENDA&token=$tokenuser"
+        web_aula.loadUrl(calendarUrl)
 
         reserva_boton.setOnClickListener {
             val intent = Intent(this@VistaReserva, Formulario::class.java)

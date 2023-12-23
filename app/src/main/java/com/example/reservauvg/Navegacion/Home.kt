@@ -120,7 +120,7 @@ class Home : Fragment() {
         if (query != null) {
             val filteredList = ArrayList<Salon>()
             for (i in mList) {
-                if (i.nombre.lowercase(Locale.ROOT).contains(query)) {
+                if (i.nombre.lowercase(Locale.ROOT).contains(query.lowercase())) {
                     filteredList.add(i)
                 }
             }
