@@ -69,4 +69,8 @@
     <style name="IconAlertColor">
         <item name="tint">@android:color/holo_red_light</item>
     </style>
+
+    <style name="PickerTheme" parent="android:Theme.Material.Dialog">
+        <item name="android:colorAccent">@color/black</item>
+    </style>
 </resources>
