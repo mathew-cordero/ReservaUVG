@@ -72,7 +72,9 @@ class Adapter(private val context: Context?, var mList: List<Salon>): RecyclerVi
         }
         //Ir al formulario de reserva
         viewHolder.boton_reserva.setOnClickListener {
-            val intent:Intent = Intent(context, Formulario::class.java)
+            val intent:Intent = Intent(context, Formulario::class.java).apply {
+                putExtra("idcalendar",mList[i].idcalendar)
+            }
             context?.startActivity(intent)
         }
 
