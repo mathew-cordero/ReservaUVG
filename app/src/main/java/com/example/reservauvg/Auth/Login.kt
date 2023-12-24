@@ -75,7 +75,13 @@ class Login : AppCompatActivity() {
                     val credential = GoogleAuthProvider.getCredential(account.idToken,null)
                     FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
                         if(it.isSuccessful){
-                            showHome(account.email?:"",account.givenName?:"",account.idToken?:"")
+                            if(account.email.toString().contains("uvg.edu.gt")){
+                                showHome(account.email?:"",account.givenName?:"",account.idToken?:"")
+                            }else{
+                                showAlertErroAcount()
+                            }
+
+
                         }else{
                             showAlert()
                             Log.d("Error google","Error en VALIDAR CREDENCIALES")
@@ -97,6 +103,15 @@ class Login : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage("Se ha producido un error")
+        builder.setPositiveButton("Aceptar",null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showAlertErroAcount(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error de Cuenta")
+        builder.setMessage("No puede iniciar sesion con otra cuenta que no sea de la Universidad del Valle de Guatemala")
         builder.setPositiveButton("Aceptar",null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
