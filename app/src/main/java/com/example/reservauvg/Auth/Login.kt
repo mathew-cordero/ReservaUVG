@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ReportFragment.Companion.reportFragment
+import com.example.reservauvg.Constants.GOOGLE_SING_IN
 import com.example.reservauvg.Navegacion.Navigation
 import com.example.reservauvg.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -17,7 +18,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
-private val GOOGLE_SING_IN = 100
+
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
