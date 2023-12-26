@@ -74,6 +74,7 @@ class Adapter(private val context: Context?, var mList: List<Salon>): RecyclerVi
         viewHolder.boton_reserva.setOnClickListener {
             val intent:Intent = Intent(context, Formulario::class.java).apply {
                 putExtra("idcalendar",mList[i].idcalendar)
+                putExtra("nombre",mList[i].nombre)
             }
             context?.startActivity(intent)
         }

@@ -63,12 +63,12 @@ class API_Calendar(val contextprovider: Context) {
 
     }
 
-    fun setDataFromCalendar(sumarry:String,description:String,horainicio:String,horafinal:String,fecha:String,calendarioid:String):String?{
+    suspend fun setDataFromCalendar(sumarry:String,description:String,horainicio:String,horafinal:String,fecha:String,calendarioid:String):String?{
         try {
             Log.d("Google proc", "se comenzó")
             val event = Event()
                 .setSummary(sumarry)
-                .setLocation("Ciudad de Guatemala, Universidad del Valle")
+                .setLocation("Ciudad de Guatemala, Edificio CIT Universidad del Valle")
                 .setDescription(description)
             val startDateTime = DateTime(fecha+"T"+horainicio+"-06:00")
             val start = EventDateTime()
@@ -80,17 +80,16 @@ class API_Calendar(val contextprovider: Context) {
                 .setDateTime(endDateTime)
                 .setTimeZone("America/Guatemala")
             event.end = end
-
-            //devolvemos la informacion
+            return withContext(Dispatchers.IO) {
                 val insertado = mService!!.events().insert(calendarioid,event).execute()
                 Log.d("Google proc", "Evento insertado: ${insertado.htmlLink}")
                 var myinfo = insertado.id
                 myinfo= myinfo+","+insertado.htmlLink
-                return myinfo //este es el efento insertado.
+                return@withContext myinfo
+            }
 
 
         } catch (e: UserRecoverableAuthIOException) {
-
             Log.d("Google error 2", e.message.toString())
             Log.d("Google error 2", e.stackTraceToString())
             return "nulo"
