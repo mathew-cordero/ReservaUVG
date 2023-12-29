@@ -71,6 +71,8 @@ class ReservarFragment : Fragment() {
     private lateinit var textcarnet:TextInputEditText
     private lateinit var textpersonas:TextInputEditText
     private lateinit var textnombre:TextInputEditText
+    private lateinit var idcalendario: String
+    private lateinit var nombreaula:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,6 +86,8 @@ class ReservarFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_reservar, container, false)
+        idcalendario = activity?.intent?.extras?.getString("idcalendar")!!
+        nombreaula = activity?.intent?.extras?.getString("nombre")!!
 
         initView(view)
         return view
@@ -308,7 +312,7 @@ class ReservarFragment : Fragment() {
             },
             doInBackground = {
                 try {
-                    setDataFromCalendar(sumarry = "El salon A110 es reservado por Mathew", description = "El estudiante"+ textnombre.text.toString()+" [carnet: "+textcarnet.text.toString()+"] reservo el salon A110 para"+ textpersonas.text.toString()+" personas", horainicio = horainitextView.text.toString(), horafinal = horafintextView.text.toString(), fecha = fechatextView.text.toString(),"dc896ffca416f4487b93fe2f48300d8c4505fa6a59eb14a79ce03ea5159244cb@group.calendar.google.com")
+                    setDataFromCalendar(sumarry = "El salon $nombreaula es reservado por Mathew", description = "El estudiante"+ textnombre.text.toString()+" [carnet: "+textcarnet.text.toString()+"] reservo el salon $nombreaula para "+ textpersonas.text.toString()+" personas", horainicio = horainitextView.text.toString(), horafinal = horafintextView.text.toString(), fecha = fechatextView.text.toString(),idcalendario)
                 } catch (e: Exception) {
                     mLastError = e
                     lifecycleScope.cancel()
